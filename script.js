@@ -1,0 +1,223 @@
+// // console.log("Hello World")
+// // let a=56;
+// // a=244
+// // let c;
+// // c=2324
+
+// //     const b=2313;
+
+// // console.log(a)
+// // console.log(b)
+// // let num=123.135
+// // console.log(num.toFixed(2))
+
+// // let data={
+// //     name:'Kritarth',
+// //     rollnumber:1231224,
+// //     age:18
+// // }
+
+// // console.log(data.name)
+// // console.log(data.rollnumber)
+// // console.log(data.age)
+
+// // arr=['Kritarth', 1231224,18]
+// // console.log(arr[1])
+// // a=a-240
+// // console.log(a)
+
+// // function outer(){
+// //     let count=0
+// //     function inner(){
+// //         count=count+1
+// //         console.log(count)
+// //     }
+// //     return inner
+// // }
+
+// // const fn=outer()
+// // // fn()
+// // // fn()
+// // // fn()
+
+// // function callback(){
+// //     console.log('Hello World')
+// // }
+
+// // function sample(callback){
+// //     callback()  
+// // }
+// // sample(callback)
+
+// // let a = [1,2,3,4,5,6,'Hello world']
+// // console.log(a)
+// // a[7]='Hello'
+// // a.push(788)
+// // console.log(a)  
+// // console.log(a.length)
+
+// // let str='abcd'
+// // a.pop()
+// // a.push(str)
+// // console.log(a)
+
+
+
+// // let arr=[1,2,3,4,5,6,7,8]
+// // const newarr=arr.map((ele)=>{
+// //     return ele*2
+// // })
+// // console.log(newarr)
+
+// // let arr=[1,2,3,4,5,6,7,8]
+// // console.log(arr)
+// // const filteredData=arr.filter((ele)=>{
+// //     return ele>4;
+// // })
+// // console.log(filteredData)
+
+// // let a="JAVA SCRIPT"
+// // let b=a.substring(0,5)
+// // alert(b)
+// // let x=45
+// // x/=5
+// // alert(x)
+// // const para=document.querySelector(".para")
+// // para.textContent="This is updated one"
+// // para.style.color="green"
+// // console.log(para)
+
+// // const container=document.querySelector(".container")
+// // container.innerHTML="<h1>This is a heading</h1>"
+// // console.log(container)
+
+// // const click=document.querySelector("#btn1")
+// // click.classList.add("btn")
+
+// // const remove=document.querySelector("#btn2")
+// // remove.classList.add("btn")
+
+// // const btn=document.querySelector('#btn3')
+// // btn.classList.add('btn')
+
+// // function show(){
+// //     alert("You have clicked the button")
+// // }
+
+// // function removed(){
+// //     alert('Event removed')
+// //     click.addEventListener('click', function(){
+// //         alert('No Event present')
+// //     })
+// //     click.removeEventListener("click",show)
+// // }
+// // click.addEventListener('click', show)
+// // remove.addEventListener("click", removed)
+
+// const btn=document.querySelector('#btn3')
+// // btn.classList.add('btn')
+
+// btn.addEventListener('keyup', (event)=>{
+//     console.log(event.key)
+// })
+
+// const form=document.querySelector("form")
+// form.addEventListener('submit'), (event)=>{
+//     event.preventDefault()
+//     console.log(event.srcElement[0].value)
+//     console.log(event.srcElement[1].value)
+//     console.log(event)
+//     console.log('button clicked')}
+
+// debugger
+// console.log(a)
+// print()
+// var a=3453;
+// let b=456;
+
+// console.log(a)
+// console.log(b)
+
+
+// function print(){
+//     console.log("inside function")
+// }
+
+// print()
+
+// setInterval(()=>{console.log("printing at every two seconds")},2000)
+
+// const timeout=setTimeout(()=>{console.log("After 2 sec")},2000)
+// clearTimeout(timeout)
+
+// n=0
+// const timer=setInterval(()=>{
+//     n+=1
+//     console.log(n)
+//     if(n===10){
+//         clearInterval(timer)
+//         console.log("Timer ended")
+//     }
+// },1000)
+
+
+// console.log("Starting homework...");
+
+// setTimeout(()=>{
+//     console.log("Homework done!");
+//     console.log("Starting dinner...");
+    
+//     setTimeout(()=>{
+//         console.log("Dinner done!");
+//         console.log("Getting ready to go out...");
+
+//         setTimeout(()=>{
+//             console.log("Going to the playground");
+//         },1000);
+//     },1500);
+// },2000);
+
+// function finishHomework(callback) {
+//     console.log("Starting Homework...");
+//     setTimeout(()=>{
+//         console.log("Homework done");
+//         callback();
+//     },2000);
+// }
+
+// function eatDinner(callback){
+//     console.log("Starting dinner...");
+//     setTimeout(()=>{
+//         console.log("Dinner done");
+//         callback();
+//     },1500);
+// }
+
+// function goToPlayground(){
+//     console.log("Going to the playground");
+// }
+
+// finishHomework(()=>{
+//     eatDinner(()=>{
+//         goToPlayground();
+//     });
+// });
+
+const p= new Promise((res,rej)=>{
+    console.log("Going to do the Homework")
+
+    setTimeout(()=>{
+        const done=true;
+        if(done){
+            res("Success")
+        }
+        else{
+            rej("Failed to fetch data from the server")
+        }
+    },3000)
+})
+p.then((a)=>{
+   console.log(a)
+}).catch((err)=>{
+    console.log(err)
+})
