@@ -203,21 +203,81 @@
 //     });
 // });
 
-const p= new Promise((res,rej)=>{
-    console.log("Going to do the Homework")
+// const p= new Promise((res,rej)=>{
+//     console.log("Going to do the Homework")
 
-    setTimeout(()=>{
-        const done=true;
-        if(done){
-            res("Success")
-        }
-        else{
-            rej("Failed to fetch data from the server")
-        }
-    },3000)
-})
-p.then((a)=>{
-   console.log(a)
+//     setTimeout(()=>{
+//         const done=true;
+//         if(done){
+//             res("Success")
+//         }
+//         else{
+//             rej("Failed to fetch data from the server")
+//         }
+//     },3000)
+// })
+// p.then((a)=>{
+//    console.log(a)
+// }).catch((err)=>{
+//     console.log(err)
+// })
+
+function doHomework(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(()=>{
+            let done=true;
+            if(done){
+                console.log("Homework complete!!")
+                res("Homework done!")
+            }
+            else{
+                rej("Homework not done!!")
+            }
+        },2000)
+    })
+    return p;
+}
+
+function eatDinner(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(()=>{
+            let done=false;
+            if(done){
+                console.log("Dinner complete!!")
+                res("Dinner done!")
+            }
+            else{
+                rej("Dinner not done!!")
+            }
+        },2000)
+    })
+    return p;
+}
+
+function goToPlayground(){
+    const p=new Promise((res,rej)=>{
+        setTimeout(()=>{
+            let done=true;
+            if(done){
+                console.log("Went to PG")
+                res("PG Time")
+            }
+            else{
+                rej("Not allowed")
+            }
+        },2000)
+    })
+    return p;
+}
+
+doHomework().then((data)=>{
+    console.log(data)
+    return eatDinner()
+}).then((data)=>{
+    console.log(data)
+    return goToPlayground()
 }).catch((err)=>{
-    console.log(err)
-})
+    console.log("Error",err)
+}).finally(()=>{
+    console.log("Go to Sleep!")
+});
