@@ -361,6 +361,6 @@
 //     }
 // }
 
-const add=a=>b=>c=>a+b+c
+// const add=a=>b=>c=>a+b+c
 
-console.log(add(2))
+// console.log(add(2))
