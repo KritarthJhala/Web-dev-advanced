@@ -302,20 +302,65 @@
 //     console.log("Finally Block")
 // }
 
-async function getData(){
-    try{
-        const response=await fetch("https://dummyjson.com/products")
-    const data=await response.json()
-    console.log(response.ok)
-    if(!response){
-        throw new Error("Something went wrong")
-    }
-    data.products.foreach((product)=>{
-        console.log(product.title)
-    })
-    }
-    catch(error){
-        console.log(error)
-    }
-}
-getData()
+// async function getData(){
+//     try{
+//         const response=await fetch("https://dummyjson.com/products")
+//     const data=await response.json()
+//     console.log(response.ok)
+//     if(!response){
+//         throw new Error("Something went wrong")
+//     }
+//     data.products.foreach((product)=>{
+//         console.log(product.title)
+//     })
+//     }
+//     catch(error){
+//         console.log(error)
+//     }
+// }
+// getData()
+
+// async function getData(){
+//     try{
+//         const response = await fetch("https://jsonplaceholder.typicode.com/posts",{
+//             method:"POST",
+//             headers:{
+//                 "Content-Type":"application/json"
+//             },
+//             body:JSON.stringify({
+//                 title:"foo",
+//                 body:"bar",
+//                 userID:1
+//             })
+//         })
+//         if(!response.ok){
+//             throw new Error("Something went wrong")
+//         }
+//     const data=await response.json()
+//     console.log(data) 
+//     }
+// }
+
+// function* generate(){
+//     yield 1
+//     yield 2
+//     yield 3
+// }
+
+// const res=generate()
+// console.log(res.next())
+// console.log(res.next())
+// console.log(res.next())
+// console.log(res.next())
+
+// function add(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c
+//         }
+//     }
+// }
+
+const add=a=>b=>c=>a+b+c
+
+console.log(add(2))
