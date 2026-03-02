@@ -364,3 +364,9 @@
 // const add=a=>b=>c=>a+b+c
 
 // console.log(add(2))
+
+{
+    let a = 515
+    console.log(a)
+}
+console.log(a)
