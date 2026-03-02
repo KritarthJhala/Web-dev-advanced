@@ -365,8 +365,8 @@
 
 // console.log(add(2))
 
-{
-    let a = 515
-    console.log(a)
-}
-console.log(a)
+// {
+//     let a = 515
+//     console.log(a)
+// }
+// console.log(a)
