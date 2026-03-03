@@ -370,3 +370,8 @@
 //     console.log(a)
 // }
 // console.log(a)
+
+let arr=[1,2,3,4,5]
+let sum=0
+let map=arr.map((i)=>{return sum+=i})
+alert(map)
