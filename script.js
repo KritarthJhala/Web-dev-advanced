@@ -390,22 +390,47 @@
 
 
 //Callback hell
-function getData(dataId, getNextData){
-    setTimeout(()=>{
-        console.log("data:", dataId);
-        if (getNextData){
-            getNextData();
-        }
-    },2000);
-}
+// function getData(dataId, getNextData){
+//     setTimeout(()=>{
+//         console.log("data:", dataId);
+//         if (getNextData){
+//             getNextData();
+//         }
+//     },2000);
+// }
 
-getData(1,()=>{
-    console.log("Getting data 2 ....");
-    getData(2,()=>{
-        console.log("Getting data 3 ....");
-        getData(3,()=>{
-            console.log("Getting data 4")
-            getData(4)
-        });
+// getData(1,()=>{
+//     console.log("Getting data 2 ....");
+//     getData(2,()=>{
+//         console.log("Getting data 3 ....");
+//         getData(3,()=>{
+//             console.log("Getting data 4")
+//             getData(4)
+//         });
+//     });
+// });
+
+
+//Promises
+function asyncFunc1(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            console.log("data1");
+            resolve("success");
+
+        },4000);
     });
+}
+function asyncFunc2(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            console.log("data2");
+            resolve("success");
+        },4000);
+    });
+}
+console.log("fetching data1....");
+asyncFunc1().then((res)=>{
+    console.log("fetching data2....");
+    asyncFunc2().then((res)=>{});
 });
