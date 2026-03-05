@@ -376,16 +376,36 @@
 // let map=arr.map((i)=>{return sum+=i})
 // alert(map)
 
-let btn = document.createElement("Button");
-btn.innerText="Click Me!";
+// let btn = document.createElement("Button");
+// btn.innerText="Click Me!";
 
-btn.style.backgroundColor="red";
-btn.style.color="white"
+// btn.style.backgroundColor="red";
+// btn.style.color="white"
 
-document.querySelector("body").prepend(btn)
+// document.querySelector("body").prepend(btn)
 
 
-let para=document.createElement("p")
-para.innerText="This is a paragraph"
+// let para=document.createElement("p")
+// para.innerText="This is a paragraph"
 
-para.s
+
+//Callback hell
+function getData(dataId, getNextData){
+    setTimeout(()=>{
+        console.log("data:", dataId);
+        if (getNextData){
+            getNextData();
+        }
+    },2000);
+}
+
+getData(1,()=>{
+    console.log("Getting data 2 ....");
+    getData(2,()=>{
+        console.log("Getting data 3 ....");
+        getData(3,()=>{
+            console.log("Getting data 4")
+            getData(4)
+        });
+    });
+});
