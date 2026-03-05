@@ -371,7 +371,21 @@
 // }
 // console.log(a)
 
-let arr=[1,2,3,4,5]
-let sum=0
-let map=arr.map((i)=>{return sum+=i})
-alert(map)
+// let arr=[1,2,3,4,5]
+// let sum=0
+// let map=arr.map((i)=>{return sum+=i})
+// alert(map)
+
+let btn = document.createElement("Button");
+btn.innerText="Click Me!";
+
+btn.style.backgroundColor="red";
+btn.style.color="white"
+
+document.querySelector("body").prepend(btn)
+
+
+let para=document.createElement("p")
+para.innerText="This is a paragraph"
+
+para.s
