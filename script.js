@@ -453,15 +453,27 @@ function getData(dataId, getNextData){
 //     });
 
 //Async-await
-async function getAllData(){
-    console.log("getting data 1....");
-    await getData(1);
-    console.log("getting data 2....");
-    await getData(2);
-    console.log("getting data 3....");
-    await getData(3);
-    console.log("getting data 4....");
-    await getData(4);
-    console.log("getting data 5....");
-    await getData(5);
-}
+// async function getAllData(){
+//     console.log("getting data 1....");
+//     await getData(1);
+//     console.log("getting data 2....");
+//     await getData(2);
+//     console.log("getting data 3....");
+//     await getData(3);
+//     console.log("getting data 4....");
+//     await getData(4);
+//     console.log("getting data 5....");
+//     await getData(5);
+// }
+
+let btn = document.queryselector("#btn1")
+
+async function getfacts(){
+    console.log("getting data....");
+    let response = await fetch("https://cat-fact.herokuapp.com/facts");
+    console.log(response);
+    let data = await response.json(); 
+    factPara.innerText = data[0].text;
+};
+
+btn.addEventListener("click", getfacts)
